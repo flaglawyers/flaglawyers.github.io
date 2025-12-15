@@ -3,125 +3,180 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FLAG – Faruqi Legal Action Group</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Faruqi Legal Action Group (FLAG)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
 
 <body>
-  <!-- Navigation Bar -->
+
+  <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="nav-logo">
-      <img src="logo.png" alt="FLAG Logo">
-      <span>FLAG</span>
+    <div class="nav-left">
+      <img src="logo.png" class="logo" alt="FLAG Logo">
+      <span class="logo-text">FLAG</span>
     </div>
+
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#practice">Practice Areas</a></li>
+      <li><a href="#practice-areas">Practice Areas</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="hire-btn" onclick="openModal()">Hire Me</button>
+
+    <button class="cta-button" onclick="openModal()">Get Free Consultation</button>
   </nav>
 
-  <!-- HERO -->
-  <header class="hero">
+  <!-- HERO SECTION WITH PARALLAX -->
+  <header class="hero parallax">
+    <div class="hero-overlay"></div>
     <h1>Faruqi Legal Action Group</h1>
     <h2>Your Advocates for Every Legal Challenge</h2>
-    <p>General Practice • Litigation • Contracts • Negotiation • Advocacy</p>
+    <p class="hero-subtitle">
+      General Practice • Litigation • Contracts • Negotiation • Advocacy
+    </p>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h2>About FLAG</h2>
-    <p>
-      Faruqi Legal Action Group (FLAG) is built on a commitment to strategic, 
-      practical, and results-driven advocacy. With a diverse foundation in litigation,
-      negotiation, toxic exposure matters, business law, contract drafting, 
-      and dispute resolution, FLAG delivers competent, adaptable, and professional representation.
-    </p>
-    <p>
-      Our experience spans complex legal issues and everyday matters alike — offering individuals 
-      and businesses clear guidance and strong advocacy across a wide spectrum of legal needs.
-    </p>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section parallax2">
+    <div class="section-overlay"></div>
+    <div class="content">
+      <h2>About FLAG</h2>
+      <p>
+        Faruqi Legal Action Group (FLAG) is built on a commitment to strategic,
+        practical, and results-driven advocacy. With a diverse foundation in 
+        litigation, negotiation, toxic exposure matters, business law, contract 
+        drafting, and dispute resolution, FLAG delivers competent, adaptable, 
+        and professional representation.
+      </p>
+      <p>
+        Our experience spans complex legal issues and everyday matters alike — 
+        offering individuals and businesses clear guidance and strong advocacy 
+        across a wide spectrum of legal needs.
+      </p>
+    </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- SERVICES SECTION -->
   <section id="services" class="section">
     <h2>Services</h2>
-    <ul class="list">
-      <li>General Practice Legal Services</li>
-      <li>Contract Drafting & Review</li>
-      <li>Personal Injury Representation</li>
-      <li>Liability Claims</li>
-      <li>Toxic Tort & Exposure Cases</li>
-      <li>Mediation & Alternative Dispute Resolution</li>
-      <li>Negotiation Strategy & Representation</li>
-      <li>Insurance Disputes</li>
-      <li>Business & Partnership Agreements</li>
-      <li>LLC Formation & Business Structuring</li>
-      <li>Consumer Protection Matters</li>
-      <li>Landlord–Tenant Issues</li>
-      <li>Small Business Legal Counsel</li>
-    </ul>
+
+    <div class="tile-grid">
+
+      <div class="tile" onclick="toggleBlurb('general')">
+        General Practice
+        <div id="blurb-general" class="tile-blurb">
+          Comprehensive legal support for day-to-day personal and business matters, 
+          ensuring you always have reliable guidance when you need it.
+        </div>
+      </div>
+
+      <div class="tile" onclick="toggleBlurb('contracts')">
+        Contract Law
+        <div id="blurb-contracts" class="tile-blurb">
+          Drafting, reviewing, and negotiating legally sound agreements designed 
+          to protect your interests and prevent disputes.
+        </div>
+      </div>
+
+      <div class="tile" onclick="toggleBlurb('injury')">
+        Personal Injury
+        <div id="blurb-injury" class="tile-blurb">
+          Advocacy for individuals injured due to negligence, helping secure 
+          compensation and justice during difficult times.
+        </div>
+      </div>
+
+      <div class="tile" onclick="toggleBlurb('liability')">
+        Liability
+        <div id="blurb-liability" class="tile-blurb">
+          Representation in complex liability matters, providing strong defense 
+          or claimant support depending on your unique situation.
+        </div>
+      </div>
+
+      <div class="tile" onclick="toggleBlurb('insurance')">
+        Insurance Disputes
+        <div id="blurb-insurance" class="tile-blurb">
+          Assistance navigating insurance claims, denials, and disputes to ensure 
+          you receive the coverage and benefits you're entitled to.
+        </div>
+      </div>
+
+      <div class="tile" onclick="toggleBlurb('mediation')">
+        Mediation
+        <div id="blurb-mediation" class="tile-blurb">
+          Efficient and cost-effective conflict resolution, helping parties reach 
+          fair and practical agreements outside of court.
+        </div>
+      </div>
+
+      <div class="tile" onclick="toggleBlurb('negotiation')">
+        Negotiation
+        <div id="blurb-negotiation" class="tile-blurb">
+          Strategic negotiation representation to secure favorable outcomes in 
+          business, legal, and personal matters.
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <!-- PRACTICE AREAS -->
-  <section id="practice" class="section">
+  <section id="practice-areas" class="section parallax2">
+    <div class="section-overlay"></div>
     <h2>Practice Areas</h2>
-    <ul class="list">
-      <li>Contract Law & Commercial Agreements</li>
-      <li>Toxic Tort & Environmental Exposure Litigation</li>
-      <li>Personal Injury & Negligence Claims</li>
-      <li>General Civil Litigation</li>
-      <li>Business Law & Corporate Governance</li>
-      <li>Insurance Law & Claims Advocacy</li>
-      <li>Mediation & Negotiation Services</li>
-      <li>Consumer Rights & Fair Practices</li>
-    </ul>
+
+    <div class="tile-grid">
+
+      <div class="tile" onclick="toggleBlurb('toxic')">
+        Toxic Tort Exposure
+        <div id="blurb-toxic" class="tile-blurb">
+          Experienced representation in toxic exposure matters, including 
+          environmental hazards, workplace chemicals, and contamination claims.
+        </div>
+      </div>
+
+      <div class="tile" onclick="toggleBlurb('disputes')">
+        Civil Disputes
+        <div id="blurb-disputes" class="tile-blurb">
+          Practical, results-driven advocacy to resolve conflicts efficiently, 
+          whether through litigation, negotiation, or mediation.
+        </div>
+      </div>
+
+      <div class="tile" onclick="toggleBlurb('business')">
+        Business Law
+        <div id="blurb-business" class="tile-blurb">
+          Support for startups, entrepreneurs, and established businesses, 
+          including compliance, drafting, liability guidance, and disputes.
+        </div>
+      </div>
+
+    </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACT SECTION -->
   <section id="contact" class="section">
-    <h2>Contact FLAG</h2>
-    <p>Email: <a href="mailto:faruqilegalactiongroup@gmail.com">faruqilegalactiongroup@gmail.com</a></p>
-    <p>Phone: <a href="tel:8329073533">832-907-3533</a></p>
-    <p>Domain Recommended: <strong>FLAGLawyers.com</strong></p>
+    <h2>Contact</h2>
+    <p>Email: <span class="white-link">Faruqilegalactiongroup@gmail.com</span></p>
+    <p>Phone: <span class="white-link">832-907-3533</span></p>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Faruqi Legal Action Group (FLAG). All Rights Reserved.</p>
-  </footer>
-
-  <!-- MODAL FORM -->
+  <!-- MODAL -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Hire Faruqi Legal Action Group</h2>
-
+      <h2>Get Free Consultation</h2>
       <form action="https://formspree.io/f/mvgeqalv" method="POST">
-        
-        <label>Your Name</label>
-        <input type="text" name="name" required>
-
-        <label>Your Email</label>
-        <input type="email" name="email" required>
-
-        <label>Your Phone Number</label>
-        <input type="text" name="phone">
-
-        <label>Service You Need</label>
-        <input type="text" name="service">
-
-        <label>Describe Your Issue</label>
-        <textarea name="message" rows="5" required></textarea>
-
-        <button type="submit" class="submit-btn">Submit</button>
-
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <textarea name="message" placeholder="Describe your legal issue" required></textarea>
+        <button type="submit" class="cta-button">Submit</button>
       </form>
     </div>
   </div>
 
-  <script src="script.js"></script>
 </body>
 </html>
