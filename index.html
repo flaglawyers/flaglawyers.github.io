@@ -38,16 +38,16 @@
       transform:scale(1.03);
       filter: blur(6px);
     }
+
+    /* ONLY CHANGE: overlay removed entirely */
     body::after{
       content:"";
       position:fixed;
       inset:0;
       z-index:-1;
-      background:
-        /* ONLY CHANGE IS THE THREE ALPHA VALUES BELOW (brighter overlay) */
-        linear-gradient(180deg, rgba(20,6,5,.34) 0%, rgba(20,6,5,.48) 60%, rgba(20,6,5,.60) 100%),
-        radial-gradient(800px 420px at 40% 10%, rgba(212,175,55,.12), transparent 60%);
+      background: transparent;
     }
+
     @media (max-width: 1024px){
       body::before{ filter: blur(4px); }
     }
