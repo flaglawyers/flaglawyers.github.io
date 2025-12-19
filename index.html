@@ -1,179 +1,370 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Faruqi Legal Action Group (FLAG)</title>
+
+  <title>Faruqi Legal Action Group (FLAG) | Legal Services, Contracts, Disputes, Negotiation</title>
+  <meta name="description" content="Faruqi Legal Action Group (FLAG) provides professional legal services including general practice support, contracts, personal injury intake, toxic exposure matter evaluation, mediation, negotiation, and insurance disputes." />
+
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-left">
-      <img src="logo.png" class="logo" alt="FLAG Logo">
-      <span class="logo-text">FLAG</span>
+  <!-- NAV -->
+  <nav class="navbar" aria-label="Primary">
+    <div class="brandlock">
+      <img src="logo.png" class="logo" alt="FLAG Logo" />
+      <div class="brandtext">
+        <div class="brandline1">FLAG</div>
+        <div class="brandline2">Faruqi Legal Action Group</div>
+      </div>
     </div>
 
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+      ☰
+    </button>
+
+    <ul id="navMenu" class="navlinks">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#practice-areas">Practice Areas</a></li>
+      <li><a href="#practice">Practice Areas</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
 
-    <button class="cta-button" onclick="openModal()">Get Free Consultation</button>
+    <button class="cta" type="button" onclick="openModal()">Get Free Consultation</button>
   </nav>
 
-  <!-- HERO SECTION WITH PARALLAX -->
-  <header class="hero parallax">
-    <div class="hero-overlay"></div>
-    <h1>Faruqi Legal Action Group</h1>
-    <h2>Your Advocates for Every Legal Challenge</h2>
-    <p class="hero-subtitle">
-      General Practice • Litigation • Contracts • Negotiation • Advocacy
-    </p>
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <p class="eyebrow">Strategic. Disciplined. Outcome-Driven.</p>
+      <h1>Faruqi Legal Action Group</h1>
+      <h2>Professional legal services for individuals and businesses.</h2>
+
+      <div class="hero-actions">
+        <button class="cta" type="button" onclick="openModal()">Get Free Consultation</button>
+        <a class="ghost" href="#services">View Services</a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="trust-pill">Contracts & Agreements</div>
+        <div class="trust-pill">Disputes & Negotiation</div>
+        <div class="trust-pill">Insurance Disputes</div>
+        <div class="trust-pill">Exposure Matter Evaluation</div>
+      </div>
+    </div>
   </header>
 
-  <!-- ABOUT SECTION -->
-  <section id="about" class="section parallax2">
-    <div class="section-overlay"></div>
-    <div class="content">
-      <h2>About FLAG</h2>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container panel">
+      <h3>About FLAG</h3>
       <p>
-        Faruqi Legal Action Group (FLAG) is built on a commitment to strategic,
-        practical, and results-driven advocacy. With a diverse foundation in 
-        litigation, negotiation, toxic exposure matters, business law, contract 
-        drafting, and dispute resolution, FLAG delivers competent, adaptable, 
-        and professional representation.
+        Faruqi Legal Action Group (FLAG) is built around a simple principle: strong work product and clear strategy drive better outcomes.
+        We approach each matter with disciplined analysis, meticulous documentation, and practical advocacy—whether the need is a contract,
+        a negotiation plan, dispute escalation, or case organization for complex issues.
       </p>
       <p>
-        Our experience spans complex legal issues and everyday matters alike — 
-        offering individuals and businesses clear guidance and strong advocacy 
-        across a wide spectrum of legal needs.
+        Clients come to FLAG for professional communication, careful issue-spotting, and a structured path forward. We prioritize clarity:
+        the facts, the options, the risks, and the next best step.
       </p>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-title">How We Work</div>
+          <div class="about-body">Tight timelines, organized files, clear writing, and strategic negotiation—built for efficiency and leverage.</div>
+        </div>
+        <div class="about-card">
+          <div class="about-title">What You Can Expect</div>
+          <div class="about-body">Professional intake, transparent steps, and documents drafted to be used—not “template language.”</div>
+        </div>
+        <div class="about-card">
+          <div class="about-title">Focus</div>
+          <div class="about-body">Contracts, disputes, liability planning, insurance issues, and evidence-forward evaluation of complex matters.</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- SERVICES SECTION -->
+  <!-- SERVICES -->
   <section id="services" class="section">
-    <h2>Services</h2>
+    <div class="container">
+      <h3>Services</h3>
+      <p class="lede">
+        FLAG offers practical legal services designed for real-world needs—clear documents, disciplined negotiation, and well-organized case strategy.
+        Click a service to view details.
+      </p>
 
-    <div class="tile-grid">
+      <div class="grid" data-accordion="single">
 
-      <div class="tile" onclick="toggleBlurb('general')">
-        General Practice
-        <div id="blurb-general" class="tile-blurb">
-          Comprehensive legal support for day-to-day personal and business matters, 
-          ensuring you always have reliable guidance when you need it.
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>General Practice Support</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Broad legal support for everyday personal and business matters—focused on issue-spotting, document readiness, and practical resolution.
+            If your situation touches contracts, disputes, liability exposure, or business operations, FLAG can typically help or coordinate the right next step.
+          </div>
         </div>
-      </div>
 
-      <div class="tile" onclick="toggleBlurb('contracts')">
-        Contract Law
-        <div id="blurb-contracts" class="tile-blurb">
-          Drafting, reviewing, and negotiating legally sound agreements designed 
-          to protect your interests and prevent disputes.
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Contract Drafting & Review</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Agreements built to perform in the real world: scope, payment protections, deliverables, deadlines, change orders, termination, remedies, indemnity, and dispute provisions.
+            FLAG emphasizes clear language and enforceable risk allocation—so your contract prevents problems instead of creating them.
+          </div>
         </div>
-      </div>
 
-      <div class="tile" onclick="toggleBlurb('injury')">
-        Personal Injury
-        <div id="blurb-injury" class="tile-blurb">
-          Advocacy for individuals injured due to negligence, helping secure 
-          compensation and justice during difficult times.
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Business & Partnership Agreements</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Formation-stage and operating agreements designed to reduce friction: roles, ownership, decision rights, deadlock resolution, buy-sell triggers, confidentiality, and exit strategy.
+            This is where disciplined drafting protects relationships and preserves value.
+          </div>
         </div>
-      </div>
 
-      <div class="tile" onclick="toggleBlurb('liability')">
-        Liability
-        <div id="blurb-liability" class="tile-blurb">
-          Representation in complex liability matters, providing strong defense 
-          or claimant support depending on your unique situation.
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Dispute Resolution & Demand Letters</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Strong written advocacy and escalation strategy—demand letters, responses, and settlement proposals designed to frame the issue, preserve leverage,
+            and move the other side toward resolution. Tone and record-building are handled with care.
+          </div>
         </div>
-      </div>
 
-      <div class="tile" onclick="toggleBlurb('insurance')">
-        Insurance Disputes
-        <div id="blurb-insurance" class="tile-blurb">
-          Assistance navigating insurance claims, denials, and disputes to ensure 
-          you receive the coverage and benefits you're entitled to.
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Negotiation & Settlement Strategy</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Structured negotiation support: objectives, leverage analysis, concession planning, and scripted communication.
+            FLAG’s approach mirrors how sophisticated disputes are resolved—clear ranges, controlled messaging, and disciplined decision-making.
+          </div>
         </div>
-      </div>
 
-      <div class="tile" onclick="toggleBlurb('mediation')">
-        Mediation
-        <div id="blurb-mediation" class="tile-blurb">
-          Efficient and cost-effective conflict resolution, helping parties reach 
-          fair and practical agreements outside of court.
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Mediation Preparation & Support</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Mediation-ready case files: clean chronology, exhibits organized, damages and risks assessed, and a settlement plan that anticipates counter-moves.
+            Prepared parties settle better—because they control the narrative and know the numbers.
+          </div>
         </div>
-      </div>
 
-      <div class="tile" onclick="toggleBlurb('negotiation')">
-        Negotiation
-        <div id="blurb-negotiation" class="tile-blurb">
-          Strategic negotiation representation to secure favorable outcomes in 
-          business, legal, and personal matters.
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Insurance Disputes & Claims Support</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Claim support when the process drifts: coverage questions, documentation packages, and dispute strategy.
+            FLAG emphasizes a strong paper trail—policy language, claim history, and communications organized for clarity and leverage.
+          </div>
         </div>
-      </div>
 
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Liability Planning & Risk Allocation</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Practical risk control through contracts and policies: waivers, limitation of liability clauses, indemnity, insurance requirements, and dispute provisions.
+            The goal is straightforward: reduce exposure and improve predictability.
+          </div>
+        </div>
+
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Personal Injury Intake & Matter Evaluation</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Structured evaluation of facts, fault, damages, and documentation needs. FLAG emphasizes early record-building, medical documentation organization,
+            and a clear theory of responsibility—so decisions are informed and strategic.
+          </div>
+        </div>
+
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Toxic Exposure Matter Evaluation</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Evidence-forward evaluation of exposure narratives: product/source identification, exposure timeline, medical record organization, and responsible-party mapping.
+            FLAG’s process is built for technical fact patterns where organization and causation thinking matter.
+          </div>
+        </div>
+
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Case Organization & Litigation-Style Support</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            For matters that demand structure: chronologies, exhibit organization, issue outlines, and written advocacy that tracks the record.
+            FLAG’s work product is built to look and read like serious legal work—because it is.
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <!-- PRACTICE AREAS -->
-  <section id="practice-areas" class="section parallax2">
-    <div class="section-overlay"></div>
-    <h2>Practice Areas</h2>
+  <section id="practice" class="section">
+    <div class="container">
+      <h3>Practice Areas</h3>
+      <p class="lede">
+        Core practice areas reflect FLAG’s focus on disciplined writing, strategic negotiation, and evidence-forward evaluation across civil matters.
+        Click an area to view details.
+      </p>
 
-    <div class="tile-grid">
+      <div class="grid" data-accordion="single">
 
-      <div class="tile" onclick="toggleBlurb('toxic')">
-        Toxic Tort Exposure
-        <div id="blurb-toxic" class="tile-blurb">
-          Experienced representation in toxic exposure matters, including 
-          environmental hazards, workplace chemicals, and contamination claims.
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>General Civil Disputes</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Disputes handled with a record-first approach: facts organized, leverage identified, and a clean escalation path.
+            Where possible, FLAG pushes for resolution through controlled negotiation and practical settlement terms.
+          </div>
         </div>
-      </div>
 
-      <div class="tile" onclick="toggleBlurb('disputes')">
-        Civil Disputes
-        <div id="blurb-disputes" class="tile-blurb">
-          Practical, results-driven advocacy to resolve conflicts efficiently, 
-          whether through litigation, negotiation, or mediation.
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Contracts & Commercial Agreements</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Service agreements, contractor terms, retainers, and commercial paperwork drafted with clarity and enforceability.
+            FLAG focuses on payment protection, scope control, termination, and dispute provisions that actually work under pressure.
+          </div>
         </div>
-      </div>
 
-      <div class="tile" onclick="toggleBlurb('business')">
-        Business Law
-        <div id="blurb-business" class="tile-blurb">
-          Support for startups, entrepreneurs, and established businesses, 
-          including compliance, drafting, liability guidance, and disputes.
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Business & Partnership Matters</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Operating and partnership documentation designed to reduce future conflict: governance, decision rights, ownership terms,
+            confidentiality, buy-sell triggers, and dispute resolution structures.
+          </div>
         </div>
-      </div>
 
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Personal Injury</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Injury matters evaluated with disciplined documentation: medical record organization, damages framing, and a clear liability narrative.
+            FLAG approaches intake like a serious case file—organized early, argued clearly, and supported by the record.
+          </div>
+        </div>
+
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Liability & Risk</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Fact-driven handling of liability exposure and risk allocation, including drafting and review of indemnity, limitation, waiver,
+            and insurance requirements—built to reduce uncertainty and strengthen your position.
+          </div>
+        </div>
+
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Insurance Disputes</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Coverage and claims disputes approached through policy language, documentation discipline, and strategic communication.
+            FLAG’s aim is to force clarity—on coverage, timelines, and decisions.
+          </div>
+        </div>
+
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Mediation & Negotiation</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Negotiation support that reads like a serious practice: objective setting, settlement ranges, risk analysis, and message discipline.
+            Mediation preparation includes organized exhibits and a tight case narrative—so you don’t negotiate blind.
+          </div>
+        </div>
+
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Toxic Tort & Exposure Matters</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Evaluation and organization of exposure-related matters—timeline construction, product/source identification, medical record organization,
+            and responsible-party mapping. FLAG’s approach is detail-forward and evidence-centered.
+          </div>
+        </div>
+
+        <div class="tile" data-tile>
+          <button class="tile-head" type="button">
+            <span>Products & Consumer Harm</span><span class="tile-icon">+</span>
+          </button>
+          <div class="tile-body">
+            Case-building that emphasizes record integrity: product identification, warning/label review, exposure pathways, and documentation strategy.
+            FLAG focuses on clarity and proof structure from the start.
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
+  <!-- CONTACT -->
   <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Email: <span class="white-link">Faruqilegalactiongroup@gmail.com</span></p>
-    <p>Phone: <span class="white-link">832-907-3533</span></p>
+    <div class="container panel">
+      <h3>Contact</h3>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-label">Email</div>
+          <a class="contact-link" href="mailto:Faruqilegalactiongroup@gmail.com">Faruqilegalactiongroup@gmail.com</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-label">Phone</div>
+          <a class="contact-link" href="tel:18329073533">832-907-3533</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-label">Consultation</div>
+          <button class="cta small" type="button" onclick="openModal()">Get Free Consultation</button>
+        </div>
+      </div>
+
+      <p class="disclaimer">
+        Disclaimer: Information on this site is for general informational purposes and does not constitute legal advice. Submitting an inquiry does not create an attorney-client relationship.
+      </p>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Faruqi Legal Action Group (FLAG)</div>
+        <div><a class="footer-link" href="#top">Back to top</a></div>
+      </div>
+    </footer>
   </section>
 
   <!-- MODAL -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Get Free Consultation</h2>
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modalbox" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modalclose" type="button" aria-label="Close" onclick="closeModal()">×</button>
+      <h4 id="modalTitle">Get Free Consultation</h4>
+      <p class="modalnote">Share a brief summary. Your message will be delivered to FLAG via secure form submission.</p>
+
       <form action="https://formspree.io/f/mvgeqalv" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="tel" name="phone" placeholder="Phone Number">
-        <textarea name="message" placeholder="Describe your legal issue" required></textarea>
-        <button type="submit" class="cta-button">Submit</button>
+        <input name="name" type="text" placeholder="Your Name" required />
+        <input name="email" type="email" placeholder="Your Email" required />
+        <input name="phone" type="tel" placeholder="Phone Number (optional)" />
+        <input name="service" type="text" placeholder="Service Needed (e.g., contract, dispute, insurance)" />
+        <textarea name="message" placeholder="Describe your issue" required></textarea>
+        <button class="cta" type="submit">Send</button>
       </form>
     </div>
   </div>
