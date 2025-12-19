@@ -36,20 +36,22 @@
       z-index:-2;
       background:url("bg-hero.jpg") center/cover no-repeat;
       transform:scale(1.03);
-      filter: none; /* ONLY CHANGE: removed blur entirely */
+      filter: blur(6px);
     }
+
+    /* ONLY CHANGE: add a subtle "ghost" overlay (happy medium ~12%) */
     body::after{
       content:"";
       position:fixed;
       inset:0;
       z-index:-1;
       background:
-        /* ONLY CHANGE: ghost overlay at 10% */
-        linear-gradient(180deg, rgba(20,6,5,.10) 0%, rgba(20,6,5,.10) 60%, rgba(20,6,5,.10) 100%),
+        linear-gradient(180deg, rgba(20,6,5,.12) 0%, rgba(20,6,5,.12) 60%, rgba(20,6,5,.12) 100%),
         radial-gradient(800px 420px at 40% 10%, rgba(212,175,55,.12), transparent 60%);
     }
+
     @media (max-width: 1024px){
-      body::before{ filter: none; } /* ONLY CHANGE: keep none on mobile too */
+      body::before{ filter: blur(4px); }
     }
 
     /* Layout helpers */
