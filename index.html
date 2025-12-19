@@ -36,20 +36,17 @@
       z-index:-2;
       background:url("bg-hero.jpg") center/cover no-repeat;
       transform:scale(1.03);
-      filter: blur(6px);
+      filter: none; /* ONLY CHANGE: removed blur entirely */
     }
-
-    /* ONLY CHANGE: overlay removed entirely */
     body::after{
       content:"";
       position:fixed;
       inset:0;
       z-index:-1;
-      background: transparent;
+      background: transparent; /* ONLY CHANGE: overlay removed */
     }
-
     @media (max-width: 1024px){
-      body::before{ filter: blur(4px); }
+      body::before{ filter: none; } /* ONLY CHANGE: keep none on mobile too */
     }
 
     /* Layout helpers */
