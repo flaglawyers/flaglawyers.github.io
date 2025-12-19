@@ -2,361 +2,664 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Faruqi Legal Action Group (FLAG) | Charleston, SC</title>
+  <meta name="description" content="Faruqi Legal Action Group (FLAG) provides contract drafting, dispute strategy, negotiation support, business agreements, and practical legal services for individuals and businesses." />
 
-  <title>Faruqi Legal Action Group (FLAG) | Legal Services, Contracts, Disputes, Negotiation</title>
-  <meta name="description" content="Faruqi Legal Action Group (FLAG) provides professional legal services including general practice support, contracts, personal injury intake, toxic exposure matter evaluation, mediation, negotiation, and insurance disputes." />
+  <style>
+    :root{
+      --mah:#140605;
+      --mah2:#2a0f0b;
+      --gold:#d4af37;
+      --gold2:#f0dd99;
+      --text:#fff6dd;
+      --muted:rgba(255,246,221,.85);
+      --border:rgba(212,175,55,.22);
+      --shadow: 0 18px 48px rgba(0,0,0,.55);
+    }
 
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      color:var(--text);
+      background: var(--mah);
+      overflow-x:hidden;
+    }
+
+    /* Full-page background */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      background:url("bg-hero.jpg") center/cover no-repeat;
+      transform:scale(1.03);
+      filter: blur(6px);
+    }
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      background:
+        linear-gradient(180deg, rgba(20,6,5,.85) 0%, rgba(20,6,5,.92) 60%, rgba(20,6,5,.95) 100%),
+        radial-gradient(800px 420px at 40% 10%, rgba(212,175,55,.12), transparent 60%);
+    }
+    @media (max-width: 1024px){
+      body::before{ filter: blur(4px); }
+    }
+
+    /* Layout helpers */
+    .wrap{ width:min(1080px, 92vw); margin:0 auto; }
+    section{ padding: 84px 0; }
+    .lede{
+      margin: 10px 0 20px;
+      color: var(--muted);
+      line-height:1.65;
+      max-width: 72ch;
+    }
+
+    /* Navbar */
+    .nav{
+      position:fixed; top:0; left:0; right:0;
+      z-index:1000;
+      background: linear-gradient(180deg, rgba(20,6,5,.92), rgba(20,6,5,.68));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
+    }
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding: 14px 4vw;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 260px;
+    }
+    .brand img{
+      width:76px; height:76px;
+      object-fit:contain;
+      filter: drop-shadow(0 14px 18px rgba(0,0,0,.55));
+    }
+    .brand .t1{
+      font-weight:900;
+      color:var(--gold);
+      letter-spacing:.8px;
+      line-height:1.05;
+      font-size:18px;
+    }
+    .brand .t2{
+      color: rgba(255,246,221,.88);
+      font-size:12.5px;
+      margin-top:4px;
+      letter-spacing:.2px;
+    }
+
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+    .menu a{
+      color: rgba(255,246,221,.92);
+      text-decoration:none;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .menu a:hover{ color:#fff; text-decoration: underline; text-underline-offset: 6px; }
+
+    .btn{
+      border:none;
+      cursor:pointer;
+      border-radius:10px;
+      padding:10px 14px;
+      font-weight:950;
+      background: linear-gradient(180deg, var(--gold2), var(--gold));
+      color:#2b120d;
+      box-shadow: 0 12px 18px rgba(0,0,0,.35);
+      transition: transform .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .btn.ghost{
+      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(255,255,255,.22);
+      color:#fff;
+      box-shadow:none;
+    }
+
+    .burger{
+      display:none;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.2);
+      color:#fff;
+      border-radius:10px;
+      padding:8px 10px;
+      cursor:pointer;
+      font-weight:900;
+    }
+
+    @media (max-width: 880px){
+      .burger{ display:inline-flex; }
+      .menu{
+        position:absolute;
+        top: 70px;
+        right: 4vw;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+        padding: 12px;
+        border-radius:14px;
+        border:1px solid var(--border);
+        background: rgba(0,0,0,.58);
+        display:none;
+      }
+      .menu.show{ display:flex; }
+    }
+
+    /* Hero */
+    .hero{
+      padding-top: 110px;
+      min-height: 78vh;
+      display:flex;
+      align-items:center;
+    }
+    .hero-card{
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      padding: 28px 22px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.52), rgba(0,0,0,.62)),
+        url("bg-office.jpg") center/cover no-repeat;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.8px;
+      color: rgba(255,246,221,.86);
+      font-weight:900;
+      font-size: 12px;
+    }
+    h1{
+      margin: 10px 0 6px;
+      font-size: clamp(40px, 5vw, 66px);
+      color: #fff8e6;
+      text-shadow: 0 2px 0 rgba(0,0,0,.35), 0 18px 44px rgba(0,0,0,.8);
+    }
+    .sub{
+      margin: 0 0 14px;
+      font-size: clamp(18px, 2.3vw, 28px);
+      color: var(--gold2);
+      text-shadow: 0 16px 36px rgba(0,0,0,.72);
+      line-height:1.25;
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .pills{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 16px;
+    }
+    .pill{
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,.25);
+      color: rgba(255,255,255,.9);
+      font-weight:800;
+      font-size: 13px;
+    }
+
+    /* Panels */
+    .panel{
+      border:1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+    h2{
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 30px;
+      text-decoration: underline;
+      text-underline-offset: 10px;
+      text-decoration-thickness: 2px;
+    }
+    p{ margin: 10px 0; line-height:1.7; color: var(--muted); }
+
+    /* Accordion cards */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 980px){ .grid{ grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px){ .grid{ grid-template-columns: 1fr; } }
+
+    .card{
+      border:1px solid var(--border);
+      border-radius: 16px;
+      overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.56), rgba(0,0,0,.62)),
+        url("bg-office.jpg") center/cover no-repeat;
+      box-shadow: 0 16px 30px rgba(0,0,0,.30);
+      backdrop-filter: blur(10px);
+    }
+    .card button{
+      width:100%;
+      text-align:left;
+      border:none;
+      background: transparent;
+      color: rgba(255,246,221,.95);
+      font-weight:950;
+      padding: 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      cursor:pointer;
+      font-size: 16px;
+    }
+    .icon{
+      width: 26px; height: 26px;
+      display:grid; place-items:center;
+      border-radius: 9px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      color:#fff;
+      font-weight:900;
+      flex: 0 0 auto;
+    }
+    .body{
+      max-height:0;
+      opacity:0;
+      overflow:hidden;
+      padding: 0 16px;
+      transition: max-height .25s ease, opacity .25s ease, padding .25s ease;
+      color: rgba(255,246,221,.88);
+      line-height:1.55;
+      font-size: 14.5px;
+    }
+    .card.open .body{
+      max-height: 260px;
+      opacity:1;
+      padding: 0 16px 16px;
+    }
+
+    /* Contact */
+    .contact-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top: 14px;
+    }
+    @media (max-width: 900px){ .contact-grid{ grid-template-columns: 1fr; } }
+
+    .contact-item{
+      border:1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(0,0,0,.25);
+      backdrop-filter: blur(10px);
+    }
+    .label{
+      color: rgba(255,246,221,.85);
+      font-weight:900;
+      margin-bottom:8px;
+    }
+    a.link{
+      color:#fff;
+      text-decoration:none;
+      border-bottom: 1px solid rgba(255,255,255,.25);
+    }
+    a.link:hover{ border-bottom-color: rgba(255,255,255,.65); }
+
+    .fineprint{
+      margin-top: 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,.70);
+      line-height:1.45;
+    }
+
+    footer{
+      padding: 18px 0 38px;
+      color: rgba(255,255,255,.68);
+      font-size: 14px;
+    }
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    /* Modal */
+    .modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:2000;
+      background: rgba(0,0,0,.72);
+      padding: 18px;
+    }
+    .modalbox{
+      width:min(560px, 96vw);
+      margin: 92px auto;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(40,15,11,.98), rgba(20,6,5,.98));
+      box-shadow: 0 26px 70px rgba(0,0,0,.65);
+      padding: 18px;
+      position:relative;
+    }
+    .close{
+      position:absolute;
+      right: 12px; top: 8px;
+      border:none;
+      background: transparent;
+      color:#fff;
+      font-size: 30px;
+      cursor:pointer;
+    }
+    .modal h3{
+      margin: 0 0 6px;
+      color: var(--gold);
+      font-size: 22px;
+    }
+    .note{ color: rgba(255,246,221,.84); margin: 0 0 12px; line-height:1.5; }
+
+    form{ display:flex; flex-direction:column; gap:10px; }
+    input, textarea{
+      width:100%;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.30);
+      color:#fff;
+      padding: 12px;
+      outline:none;
+      font-family: inherit;
+      font-size: 15px;
+    }
+    textarea{ min-height: 120px; resize: vertical; }
+
+  </style>
 </head>
 
 <body>
 
   <!-- NAV -->
-  <nav class="navbar" aria-label="Primary">
-    <div class="brandlock">
-      <img src="logo.png" class="logo" alt="FLAG Logo" />
-      <div class="brandtext">
-        <div class="brandline1">FLAG</div>
-        <div class="brandline2">Faruqi Legal Action Group</div>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <img src="logo.png" alt="FLAG logo" />
+        <div>
+          <div class="t1">FLAG</div>
+          <div class="t2">Faruqi Legal Action Group</div>
+        </div>
       </div>
+
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">☰</button>
+
+      <ul class="menu" id="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#practice">Practice Areas</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button class="btn" type="button" id="openModalTop">Get Free Consultation</button>
     </div>
-
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
-      ☰
-    </button>
-
-    <ul id="navMenu" class="navlinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#practice">Practice Areas</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <button class="cta" type="button" onclick="openModal()">Get Free Consultation</button>
-  </nav>
+  </div>
 
   <!-- HERO -->
-  <header class="hero" id="top">
-    <div class="hero-inner">
-      <p class="eyebrow">Strategic. Disciplined. Outcome-Driven.</p>
-      <h1>Faruqi Legal Action Group</h1>
-      <h2>Professional legal services for individuals and businesses.</h2>
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="eyebrow">Strategic • Disciplined • Outcome-Driven</div>
+        <h1>Faruqi Legal Action Group</h1>
+        <div class="sub">Professional legal services for individuals and businesses.</div>
+        <p class="lede">
+          Clear contracts, disciplined negotiation, and record-ready advocacy—built to protect your position and move matters forward.
+        </p>
+        <div class="actions">
+          <button class="btn" type="button" id="openModalHero">Get Free Consultation</button>
+          <a class="btn ghost" href="#services">View Services</a>
+        </div>
 
-      <div class="hero-actions">
-        <button class="cta" type="button" onclick="openModal()">Get Free Consultation</button>
-        <a class="ghost" href="#services">View Services</a>
-      </div>
-
-      <div class="hero-trust">
-        <div class="trust-pill">Contracts & Agreements</div>
-        <div class="trust-pill">Disputes & Negotiation</div>
-        <div class="trust-pill">Insurance Disputes</div>
-        <div class="trust-pill">Exposure Matter Evaluation</div>
+        <div class="pills">
+          <div class="pill">Contracts & Agreements</div>
+          <div class="pill">Disputes & Negotiation</div>
+          <div class="pill">Insurance Issues</div>
+          <div class="pill">Exposure Matter Evaluation</div>
+        </div>
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container panel">
-      <h3>About FLAG</h3>
-      <p>
-        Faruqi Legal Action Group (FLAG) is built around a simple principle: strong work product and clear strategy drive better outcomes.
-        We approach each matter with disciplined analysis, meticulous documentation, and practical advocacy—whether the need is a contract,
-        a negotiation plan, dispute escalation, or case organization for complex issues.
-      </p>
-      <p>
-        Clients come to FLAG for professional communication, careful issue-spotting, and a structured path forward. We prioritize clarity:
-        the facts, the options, the risks, and the next best step.
-      </p>
-
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="about-title">How We Work</div>
-          <div class="about-body">Tight timelines, organized files, clear writing, and strategic negotiation—built for efficiency and leverage.</div>
-        </div>
-        <div class="about-card">
-          <div class="about-title">What You Can Expect</div>
-          <div class="about-body">Professional intake, transparent steps, and documents drafted to be used—not “template language.”</div>
-        </div>
-        <div class="about-card">
-          <div class="about-title">Focus</div>
-          <div class="about-body">Contracts, disputes, liability planning, insurance issues, and evidence-forward evaluation of complex matters.</div>
-        </div>
+  <section id="about">
+    <div class="wrap">
+      <div class="panel">
+        <h2>About FLAG</h2>
+        <p>
+          Faruqi Legal Action Group (FLAG) is built on high-quality work product, careful issue-spotting, and practical advocacy. We approach matters
+          the way serious firms do—organize the record, identify leverage, clarify risks, and execute a plan.
+        </p>
+        <p>
+          Clients come to FLAG for professional communication, disciplined drafting, and negotiation strategy that is calm, controlled, and effective.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="section">
-    <div class="container">
-      <h3>Services</h3>
-      <p class="lede">
-        FLAG offers practical legal services designed for real-world needs—clear documents, disciplined negotiation, and well-organized case strategy.
+  <section id="services">
+    <div class="wrap">
+      <h2>Services</h2>
+      <div class="lede">
+        FLAG offers practical legal services designed for real-world needs—clear documents, disciplined negotiation, and well-organized strategy.
         Click a service to view details.
-      </p>
+      </div>
 
       <div class="grid" data-accordion="single">
-
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>General Practice Support</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Broad legal support for everyday personal and business matters—focused on issue-spotting, document readiness, and practical resolution.
-            If your situation touches contracts, disputes, liability exposure, or business operations, FLAG can typically help or coordinate the right next step.
+        <div class="card">
+          <button type="button"><span>Contract Drafting & Review</span><span class="icon">+</span></button>
+          <div class="body">
+            Agreements designed to perform under pressure: scope, payment protections, deliverables, change orders, termination, remedies,
+            indemnity, and dispute provisions—written clearly and built to reduce friction and prevent costly surprises.
           </div>
         </div>
 
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Contract Drafting & Review</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Agreements built to perform in the real world: scope, payment protections, deliverables, deadlines, change orders, termination, remedies, indemnity, and dispute provisions.
-            FLAG emphasizes clear language and enforceable risk allocation—so your contract prevents problems instead of creating them.
+        <div class="card">
+          <button type="button"><span>Business & Partnership Agreements</span><span class="icon">+</span></button>
+          <div class="body">
+            Formation and operating documents structured to protect relationships and preserve value: roles, ownership, decision rights,
+            deadlock planning, buy-sell triggers, confidentiality, and exit strategy.
           </div>
         </div>
 
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Business & Partnership Agreements</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Formation-stage and operating agreements designed to reduce friction: roles, ownership, decision rights, deadlock resolution, buy-sell triggers, confidentiality, and exit strategy.
-            This is where disciplined drafting protects relationships and preserves value.
+        <div class="card">
+          <button type="button"><span>Dispute Strategy & Demand Letters</span><span class="icon">+</span></button>
+          <div class="body">
+            Strong written advocacy and escalation strategy—demand letters, responses, settlement proposals, and record-building communications
+            designed to preserve leverage and move matters toward resolution.
           </div>
         </div>
 
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Dispute Resolution & Demand Letters</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Strong written advocacy and escalation strategy—demand letters, responses, and settlement proposals designed to frame the issue, preserve leverage,
-            and move the other side toward resolution. Tone and record-building are handled with care.
+        <div class="card">
+          <button type="button"><span>Negotiation & Settlement Support</span><span class="icon">+</span></button>
+          <div class="body">
+            Structured negotiation planning: objectives, leverage analysis, concession strategy, and scripted communication.
+            The focus is disciplined decision-making and controlled messaging—so you don’t negotiate blind.
           </div>
         </div>
 
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Negotiation & Settlement Strategy</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Structured negotiation support: objectives, leverage analysis, concession planning, and scripted communication.
-            FLAG’s approach mirrors how sophisticated disputes are resolved—clear ranges, controlled messaging, and disciplined decision-making.
+        <div class="card">
+          <button type="button"><span>Mediation Preparation</span><span class="icon">+</span></button>
+          <div class="body">
+            Mediation-ready case organization: chronologies, exhibits, key documents, and a settlement plan that anticipates counter-moves.
+            Prepared parties consistently secure better outcomes.
           </div>
         </div>
 
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Mediation Preparation & Support</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Mediation-ready case files: clean chronology, exhibits organized, damages and risks assessed, and a settlement plan that anticipates counter-moves.
-            Prepared parties settle better—because they control the narrative and know the numbers.
+        <div class="card">
+          <button type="button"><span>Insurance Disputes & Claims Support</span><span class="icon">+</span></button>
+          <div class="body">
+            Claim support when the process drifts: documentation packages, policy-language analysis, and dispute communications.
+            FLAG emphasizes a strong paper trail and clear issue framing to push decisions forward.
           </div>
         </div>
 
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Insurance Disputes & Claims Support</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Claim support when the process drifts: coverage questions, documentation packages, and dispute strategy.
-            FLAG emphasizes a strong paper trail—policy language, claim history, and communications organized for clarity and leverage.
+        <div class="card">
+          <button type="button"><span>Liability Planning & Risk Allocation</span><span class="icon">+</span></button>
+          <div class="body">
+            Practical risk control through contracts: limitation of liability, waivers, indemnity, insurance requirements,
+            and dispute provisions—built to reduce exposure and improve predictability.
           </div>
         </div>
 
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Liability Planning & Risk Allocation</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Practical risk control through contracts and policies: waivers, limitation of liability clauses, indemnity, insurance requirements, and dispute provisions.
-            The goal is straightforward: reduce exposure and improve predictability.
+        <div class="card">
+          <button type="button"><span>Personal Injury Matter Evaluation</span><span class="icon">+</span></button>
+          <div class="body">
+            Evidence-forward evaluation and organization: fact development, documentation planning, record organization,
+            and a clear theory of responsibility—so decisions are informed, strategic, and well-supported.
           </div>
         </div>
 
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Personal Injury Intake & Matter Evaluation</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Structured evaluation of facts, fault, damages, and documentation needs. FLAG emphasizes early record-building, medical documentation organization,
-            and a clear theory of responsibility—so decisions are informed and strategic.
+        <div class="card">
+          <button type="button"><span>Toxic Exposure Matter Evaluation</span><span class="icon">+</span></button>
+          <div class="body">
+            Structured evaluation of exposure narratives: timeline construction, source identification,
+            medical record organization, and responsible-party mapping—designed for technical fact patterns.
           </div>
         </div>
-
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Toxic Exposure Matter Evaluation</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Evidence-forward evaluation of exposure narratives: product/source identification, exposure timeline, medical record organization, and responsible-party mapping.
-            FLAG’s process is built for technical fact patterns where organization and causation thinking matter.
-          </div>
-        </div>
-
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Case Organization & Litigation-Style Support</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            For matters that demand structure: chronologies, exhibit organization, issue outlines, and written advocacy that tracks the record.
-            FLAG’s work product is built to look and read like serious legal work—because it is.
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- PRACTICE AREAS -->
-  <section id="practice" class="section">
-    <div class="container">
-      <h3>Practice Areas</h3>
-      <p class="lede">
+  <section id="practice">
+    <div class="wrap">
+      <h2>Practice Areas</h2>
+      <div class="lede">
         Core practice areas reflect FLAG’s focus on disciplined writing, strategic negotiation, and evidence-forward evaluation across civil matters.
         Click an area to view details.
-      </p>
+      </div>
 
       <div class="grid" data-accordion="single">
-
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>General Civil Disputes</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Disputes handled with a record-first approach: facts organized, leverage identified, and a clean escalation path.
-            Where possible, FLAG pushes for resolution through controlled negotiation and practical settlement terms.
+        <div class="card">
+          <button type="button"><span>Contracts & Commercial Agreements</span><span class="icon">+</span></button>
+          <div class="body">
+            Service agreements, retainers, contractor terms, and commercial paperwork drafted with clarity and enforceability—
+            focused on scope control, payment protection, and dispute provisions that work.
           </div>
         </div>
 
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Contracts & Commercial Agreements</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Service agreements, contractor terms, retainers, and commercial paperwork drafted with clarity and enforceability.
-            FLAG focuses on payment protection, scope control, termination, and dispute provisions that actually work under pressure.
+        <div class="card">
+          <button type="button"><span>Business & Partnership Matters</span><span class="icon">+</span></button>
+          <div class="body">
+            Governance, ownership, and exit planning documents designed to reduce conflict and protect value—
+            including buy-sell terms, decision rules, confidentiality, and dispute resolution structure.
           </div>
         </div>
 
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Business & Partnership Matters</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Operating and partnership documentation designed to reduce future conflict: governance, decision rights, ownership terms,
-            confidentiality, buy-sell triggers, and dispute resolution structures.
+        <div class="card">
+          <button type="button"><span>General Civil Disputes</span><span class="icon">+</span></button>
+          <div class="body">
+            Disputes handled with a record-first approach: organize facts, identify leverage, and execute an escalation plan.
+            Where possible, FLAG pushes for efficient resolution through disciplined negotiation.
           </div>
         </div>
 
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Personal Injury</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Injury matters evaluated with disciplined documentation: medical record organization, damages framing, and a clear liability narrative.
-            FLAG approaches intake like a serious case file—organized early, argued clearly, and supported by the record.
+        <div class="card">
+          <button type="button"><span>Mediation & Negotiation</span><span class="icon">+</span></button>
+          <div class="body">
+            Settlement strategy built like serious practice: objectives, range planning, risk analysis, and message discipline.
+            Mediation prep includes organized exhibits and a tight case narrative.
           </div>
         </div>
 
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Liability & Risk</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Fact-driven handling of liability exposure and risk allocation, including drafting and review of indemnity, limitation, waiver,
-            and insurance requirements—built to reduce uncertainty and strengthen your position.
+        <div class="card">
+          <button type="button"><span>Insurance Disputes</span><span class="icon">+</span></button>
+          <div class="body">
+            Coverage and claims issues approached through policy language, documentation discipline, and strategic communication—
+            aiming to force clarity on decisions, timelines, and obligations.
           </div>
         </div>
 
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Insurance Disputes</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Coverage and claims disputes approached through policy language, documentation discipline, and strategic communication.
-            FLAG’s aim is to force clarity—on coverage, timelines, and decisions.
+        <div class="card">
+          <button type="button"><span>Toxic Tort & Exposure Matters</span><span class="icon">+</span></button>
+          <div class="body">
+            Evaluation and organization of exposure-related matters: timelines, source/product identification,
+            medical record structure, and responsible-party mapping—built for complex fact patterns.
           </div>
         </div>
-
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Mediation & Negotiation</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Negotiation support that reads like a serious practice: objective setting, settlement ranges, risk analysis, and message discipline.
-            Mediation preparation includes organized exhibits and a tight case narrative—so you don’t negotiate blind.
-          </div>
-        </div>
-
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Toxic Tort & Exposure Matters</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Evaluation and organization of exposure-related matters—timeline construction, product/source identification, medical record organization,
-            and responsible-party mapping. FLAG’s approach is detail-forward and evidence-centered.
-          </div>
-        </div>
-
-        <div class="tile" data-tile>
-          <button class="tile-head" type="button">
-            <span>Products & Consumer Harm</span><span class="tile-icon">+</span>
-          </button>
-          <div class="tile-body">
-            Case-building that emphasizes record integrity: product identification, warning/label review, exposure pathways, and documentation strategy.
-            FLAG focuses on clarity and proof structure from the start.
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="container panel">
-      <h3>Contact</h3>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <div class="contact-label">Email</div>
-          <a class="contact-link" href="mailto:Faruqilegalactiongroup@gmail.com">Faruqilegalactiongroup@gmail.com</a>
+  <section id="contact">
+    <div class="wrap">
+      <div class="panel">
+        <h2>Contact</h2>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="label">Email</div>
+            <a class="link" href="mailto:Faruqilegalactiongroup@gmail.com">Faruqilegalactiongroup@gmail.com</a>
+          </div>
+
+          <div class="contact-item">
+            <div class="label">Phone</div>
+            <a class="link" href="tel:18329073533">832-907-3533</a>
+          </div>
+
+          <div class="contact-item">
+            <div class="label">Consultation</div>
+            <button class="btn" type="button" id="openModalContact">Get Free Consultation</button>
+          </div>
         </div>
-        <div class="contact-card">
-          <div class="contact-label">Phone</div>
-          <a class="contact-link" href="tel:18329073533">832-907-3533</a>
-        </div>
-        <div class="contact-card">
-          <div class="contact-label">Consultation</div>
-          <button class="cta small" type="button" onclick="openModal()">Get Free Consultation</button>
+
+        <div class="fineprint">
+          Disclaimer: This site is for general informational purposes and does not constitute legal advice. Submitting an inquiry does not create an attorney-client relationship.
         </div>
       </div>
 
-      <p class="disclaimer">
-        Disclaimer: Information on this site is for general informational purposes and does not constitute legal advice. Submitting an inquiry does not create an attorney-client relationship.
-      </p>
+      <footer>
+        <div class="foot">
+          <div>© <span id="year"></span> Faruqi Legal Action Group (FLAG)</div>
+          <div><a class="link" href="#top">Back to top</a></div>
+        </div>
+      </footer>
     </div>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <div>© <span id="year"></span> Faruqi Legal Action Group (FLAG)</div>
-        <div><a class="footer-link" href="#top">Back to top</a></div>
-      </div>
-    </footer>
   </section>
 
   <!-- MODAL -->
-  <div id="modal" class="modal" aria-hidden="true">
-    <div class="modalbox" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modalclose" type="button" aria-label="Close" onclick="closeModal()">×</button>
-      <h4 id="modalTitle">Get Free Consultation</h4>
-      <p class="modalnote">Share a brief summary. Your message will be delivered to FLAG via secure form submission.</p>
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modalbox" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+      <button class="close" type="button" id="closeModal" aria-label="Close">×</button>
+      <h3 id="mTitle">Get Free Consultation</h3>
+      <div class="note">Share a brief summary. Your message will be delivered securely via form submission.</div>
 
       <form action="https://formspree.io/f/mvgeqalv" method="POST">
         <input name="name" type="text" placeholder="Your Name" required />
@@ -364,10 +667,77 @@
         <input name="phone" type="tel" placeholder="Phone Number (optional)" />
         <input name="service" type="text" placeholder="Service Needed (e.g., contract, dispute, insurance)" />
         <textarea name="message" placeholder="Describe your issue" required></textarea>
-        <button class="cta" type="submit">Send</button>
+        <button class="btn" type="submit">Send</button>
       </form>
     </div>
   </div>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const burger = document.getElementById("burger");
+    const menu = document.getElementById("menu");
+    burger?.addEventListener("click", () => {
+      const open = menu.classList.toggle("show");
+      burger.setAttribute("aria-expanded", String(open));
+    });
+    // Close menu when clicking a link (mobile)
+    menu?.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        menu.classList.remove("show");
+        burger.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Modal
+    const modal = document.getElementById("modal");
+    const openButtons = ["openModalTop","openModalHero","openModalContact"]
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+
+    function openModal(){
+      modal.style.display = "block";
+      modal.setAttribute("aria-hidden","false");
+    }
+    function closeModal(){
+      modal.style.display = "none";
+      modal.setAttribute("aria-hidden","true");
+    }
+
+    openButtons.forEach(btn => btn.addEventListener("click", openModal));
+    document.getElementById("closeModal")?.addEventListener("click", closeModal);
+    window.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+    window.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+    // Accordion (guaranteed working)
+    function wireAccordions(){
+      const grids = document.querySelectorAll('[data-accordion="single"]');
+      grids.forEach(grid => {
+        const cards = Array.from(grid.querySelectorAll(".card"));
+        const closeAll = () => cards.forEach(c => {
+          c.classList.remove("open");
+          const icon = c.querySelector(".icon");
+          if (icon) icon.textContent = "+";
+        });
+
+        cards.forEach(card => {
+          const btn = card.querySelector("button");
+          const icon = card.querySelector(".icon");
+          btn.addEventListener("click", () => {
+            const isOpen = card.classList.contains("open");
+            closeAll();
+            if (!isOpen){
+              card.classList.add("open");
+              if (icon) icon.textContent = "–";
+            }
+          });
+        });
+      });
+    }
+    wireAccordions();
+  </script>
 
 </body>
 </html>
